@@ -9,9 +9,9 @@ export const SocialLinks = [
     icon: "simple-icons:linkedin",
     href: "https://www.linkedin.com/in/etudaye",
   },
-  { icon: "simple-icons:rss", href: "/Astro-Portfolio-Website/rss.xml" },
+  { icon: "simple-icons:rss", href: "/rss.xml" },
 ];
 
 export const SiteName = "Musa Muhammad Etudaye";
 
-export const SiteUrl = "https://techbone.github.io/Astro-Portfolio-Website";
+export const SiteUrl = "https://musa-etudaye.vercel.app";
