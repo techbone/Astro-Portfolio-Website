@@ -10,13 +10,13 @@ import { SiteUrl } from "./src/theme.config";
 // https://astro.build/config
 export default defineConfig({
   site: SiteUrl,
-  base: "/",
+  base: "/Astro-Portfolio-Website/",
   output: "static",
   devToolbar: {
     enabled: false,
   },
   image: {
-    domains: ["127.0.0.1"],
+    domains: [],
   },
   integrations: [markdoc(), sitemap(), icon(), mdx()],
   vite: {
