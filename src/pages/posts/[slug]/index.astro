@@ -28,10 +28,19 @@ const { entry, catFreqs } = Astro.props;
 const { Content } = await render(entry);
 
 const i18n = entry.data;
+
+const allCategories = await getCollection("blogCategories");
+const catNames = allCategories.reduce(
+  (acc, cat) => {
+    acc[cat.id] = cat.data.name;
+    return acc;
+  },
+  {} as Record<string, string>
+);
 ---
 
 <SimpleLayout
-  title=`${i18n.title} | Category | Trieve`
+  title=`${i18n.title} | Pixelbook`
   type="article"
   imageUrl={i18n.coverImage}
   description={i18n.summary}
@@ -75,7 +84,7 @@ const i18n = entry.data;
             <small>
               <code>
                 <a href={`/posts/${cat}`}>
-                  {cat} ({catFreqs[cat]})
+                  {catNames[cat] ?? cat} ({catFreqs[cat]})
                 </a>
               </code>{" "}
             </small>
@@ -87,7 +96,7 @@ const i18n = entry.data;
           <Image
             src={i18n.coverImage}
             alt="Cover image"
-            class="rounded-sm w-3/4 mx-auto"
+            class="rounded-xl w-full max-w-md mx-auto aspect-video object-contain"
           />
         )
       }

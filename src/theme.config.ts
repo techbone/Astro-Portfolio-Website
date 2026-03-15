@@ -1,18 +1,17 @@
 export const SocialLinks = [
-  { icon: "bi:envelope", href: "mailto:me@skeptrune.io" },
+  { icon: "bi:envelope", href: "mailto:musaawwaletudaye@gmail.com" },
   {
     icon: "simple-icons:github",
-    href: "https://github.com/skeptrunedev/picocss-astro-theme",
+    href: "https://github.com/techbone",
   },
-  { icon: "bi:twitter-x", href: "https://x.com/skeptrune" },
+  { icon: "bi:twitter-x", href: "https://x.com/etudaye_fn" },
   {
-    icon: "simple-icons:matrix",
-    href: "https://matrix.to/#/@skeptrune:trieve.ai",
+    icon: "simple-icons:linkedin",
+    href: "https://www.linkedin.com/in/etudaye",
   },
-  { icon: "simple-icons:linkedin", href: "https://linkedin.com/in/nkhami" },
   { icon: "simple-icons:rss", href: "/rss.xml" },
 ];
 
-export const SiteName = "Pixelbook Blog";
+export const SiteName = "Musa Muhammad Etudaye";
 
-export const SiteUrl = "https://pixelbook.dev";
+export const SiteUrl = "https://musaetudaye.dev";

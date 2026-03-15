@@ -1,0 +1,155 @@
+---
+title: Rust as a Frontend Developer - Building My First CLI Guessing Game
+slug: rust-cli-guessing-game
+summary: "A beginner's journey learning Rust by building a command-line guessing game. Exploring fundamental Rust concepts through practical implementation."
+author: Musa Muhammad Etudaye
+createdAt: 2025-12-19T00:00:00.000Z
+updatedAt: 2025-12-19T00:00:00.000Z
+isDraft: false
+categories:
+  - rust-tutorials
+coverImage: ../../assets/images/GuessGameImage.jpeg
+---
+
+## Rust as a Frontend Developer: Building My First CLI Guessing Game 🦀
+
+As a frontend developer, I recently started learning Rust. Rather than jumping straight into complex systems programming, I decided to begin with the fundamentals using the official Rust book.
+
+One of the first projects in the book is a small command-line game where the user tries to guess a randomly generated number. I decided to expand the original example slightly by adding a player name and attempt counter to make it more interactive.
+
+In this article, I'll walk through how the program works and what Rust concepts it helped me understand.
+
+## What the Program Does
+
+The game works like this:
+
+- The program asks for your name.
+- It generates a random number between 1 and 5.
+- You try to guess the number.
+- The program tells you if your guess is too high or too low.
+- When you guess correctly, the game ends and shows how many attempts it took.
+
+Here is the full code:
+
+```rust
+use rand::Rng;
+use std::cmp::Ordering;
+use std::io;
+
+fn main() {
+    println!("Welcome to the Guessing Game!");
+    println!("What is your name ?");
+
+    let mut name = String::new();
+    io::stdin().read_line(&mut name).expect("input your name!");
+
+    println!("Migoto!, so the name is {}", name);
+    println!("Guess a number rn!!");
+
+    let secret_number = rand::thread_rng().gen_range(1..=5);
+    let mut attempts = 0;
+
+    loop {
+        attempts += 1;
+        println!("Input the guessed number:");
+
+        let mut guess = String::new();
+        io::stdin()
+            .read_line(&mut guess)
+            .expect("Failed to read line");
+
+        println!("You guessed: {}", guess);
+
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+
+        match guess.cmp(&secret_number) {
+            Ordering::Less => println!("common {} that's Too small 😂", name),
+            Ordering::Greater => println!("leemao {} that's Too Big 🤦🏾", name),
+            Ordering::Equal => {
+                println!("You got the guess right {}, and it took you {} attempts!", name, attempts);
+                break;
+            }
+        }
+    }
+}
+```
+
+## Let's break down the important parts
+
+### 1. Importing Rust Libraries
+
+At the top of the file we import the tools we need:
+
+```rust
+use rand::Rng;
+use std::cmp::Ordering;
+use std::io;
+```
+
+- `rand::Rng` allows us to generate random numbers.
+- `std::cmp::Ordering` helps us compare two values.
+- `std::io` allows us to read input from the terminal.
+
+Rust encourages explicit imports, which helps make code clearer and safer.
+
+### 2. Reading User Input
+
+To read input from the terminal, we use stdin:
+
+```rust
+let mut name = String::new();
+io::stdin().read_line(&mut name).expect("input your name!");
+```
+
+A few important Rust concepts appear here:
+
+- `String::new()` creates an empty string.
+- `mut` means the variable can change (mutable).
+- `.expect()` handles errors - if input fails, it panics with the message provided.
+
+### 3. Generating Random Numbers
+
+```rust
+let secret_number = rand::thread_rng().gen_range(1..=5);
+```
+
+This generates a random number between 1 and 5. The `=` in `1..=5` means the range is inclusive on both ends.
+
+### 4. Pattern Matching with match
+
+```rust
+match guess.cmp(&secret_number) {
+    Ordering::Less => println!("Too small"),
+    Ordering::Greater => println!("Too big"),
+    Ordering::Equal => {
+        println!("Correct!");
+        break;
+    }
+}
+```
+
+The `match` statement is Rust's way of pattern matching. It's exhaustive - you must handle all possible cases. This is one of Rust's features that makes code safer.
+
+## Key Takeaways
+
+This simple guessing game demonstrates several fundamental Rust concepts:
+
+- **Ownership & Borrowing**: Using `&mut name` to borrow a mutable reference
+- **Pattern Matching**: The `match` expression handles different outcomes
+- **Error Handling**: Using `.expect()` for basic error handling
+- **Mutability**: Declaring variables with `mut` when they need to change
+- **Type Inference**: Rust figures out types but you can also be explicit
+
+Coming from JavaScript and React, I found Rust's explicit nature refreshing. It forces you to think about ownership, mutability, and error handling upfront rather than debugging issues later.
+
+Happy coding! 🦀
+
+---
+
+### Source Code
+If you want to check out the full code, you can find it here:
+
+**GitHub:** [rust_guessing_game](https://github.com/techbone/rust_guessing_game)

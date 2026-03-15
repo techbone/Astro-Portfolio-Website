@@ -7,12 +7,12 @@ const parser = new MarkdownIt();
 export async function GET(context) {
   const blog = await getCollection("blogPosts");
   return rss({
-    title: "Trieve’s Blog",
+    title: "Pixelbook | Musa Muhammad Etudaye",
     description:
-      "Sell more and answer every question with Conversational Discovery. Trieve uses GenAI to show your users what they're looking for every time",
+      "A technical blog by Musa Muhammad Etudaye about React, Rust, and the future of Frontend Development.",
     site: context.site,
     items: blog.map((post) => ({
-      link: `/blog/${post.id}/`,
+      link: `/posts/${post.id}/`,
       content: sanitizeHtml(parser.render(post.body), {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
       }),
