@@ -7,7 +7,7 @@ import ProfileImage from "../assets/images/site-content/techbone.jpeg";
 <SimpleLayout
   title="Musa Muhammad Etudaye | Software Engineer"
   type="article"
-  description="Software Engineer with 4+ years building web and mobile products in React, Next.js, and TypeScript — now writing Solana programs in Rust and Anchor."
+  description="Software Engineer with 4+ years building web and mobile products in React, Next.js, and TypeScript. Now also writing Solana programs in Rust and Anchor."
   publishedTime="2025-03-15T00:00:00Z"
   modifiedTime="2026-08-16T00:00:00Z"
   author="Musa Muhammad Etudaye"
@@ -32,7 +32,7 @@ import ProfileImage from "../assets/images/site-content/techbone.jpeg";
       I am a passionate Software Engineer with over 4 years of experience crafting intuitive, high-performance web and mobile applications. My expertise lies in the React ecosystem(React, Next.js, React Native) and TypeScript, where I focus on translating complex technical requirements into seamless, user-centric experiences.
     </p>
     <p>
-      More recently I have been building on Solana — writing on-chain programs in Rust and Anchor, and the dApps that talk to them. My current project, AfterKey, is a non-custodial inheritance protocol for crypto assets.
+      More recently I have been building on Solana, writing on-chain programs in Rust and Anchor and the dApps that talk to them. My current project, AfterKey, is a non-custodial inheritance protocol for crypto assets.
     </p>
     <p>
       I thrive on solving complex problems through clean architecture and teamwork. In my free time, I love watching anime.
@@ -58,18 +58,22 @@ import ProfileImage from "../assets/images/site-content/techbone.jpeg";
 
     <h3>Work Experience</h3>
 
-    <h4>Founder / Protocol Engineer | <a href="https://after-key-web.vercel.app/" target="_blank" rel="noopener noreferrer">AfterKey</a> — Non-Custodial Crypto Inheritance Protocol (Solana)</h4>
+    <h4>Founder / Protocol Engineer | <a href="https://after-key-web.vercel.app/" target="_blank" rel="noopener noreferrer">AfterKey</a> (Non-Custodial Crypto Inheritance Protocol, Solana)</h4>
     <p><em>2026 – present</em></p>
     <p>
-      A dead-man's-switch inheritance protocol that lets Solana users pass assets to chosen beneficiaries without ever sharing private keys — addressing the billions in crypto permanently lost to owner death.
+      A dead-man's-switch inheritance protocol that lets Solana users pass assets to chosen beneficiaries without ever sharing private keys. Addresses the billions in crypto permanently lost to owner death.
     </p>
     <ul>
-      <li>Authored a 16-instruction Anchor/Rust program implementing a four-state vault machine (Active → InChallenge → Released → Closed) with owner-configurable inactivity timers, a challenge window, and single-signature veto; supports SOL and SPL token custody via PDA-owned vaults and associated token accounts</li>
-      <li>Designed for trustless completion: inheritance finalization and pro-rata distribution are permissionless, so claims settle even if the company ceases to exist — distribution targets are read from on-chain state and can never be supplied by the caller</li>
-      <li>Built a 63-case test suite on LiteSVM covering the full instruction × state × signer matrix with exact error-code assertions, clock-warped timing-boundary tests, and adversarial cases (account substitution, spoofed claimants, share-arithmetic invariants)</li>
+      <li>Authored a 16-instruction Anchor/Rust program implementing a four-state vault machine (Active → InChallenge → Released → Closed) with owner-configurable inactivity timers, a challenge window, and single-signature veto</li>
+      <li>Supports SOL and SPL token custody via PDA-owned vaults and associated token accounts</li>
+      <li>Designed for trustless completion: inheritance finalization and pro-rata distribution are permissionless, so claims settle even if the company ceases to exist</li>
+      <li>Distribution targets are read from on-chain state and can never be supplied by the caller</li>
+      <li>Built a 63-case test suite on LiteSVM covering the full instruction × state × signer matrix with exact error-code assertions</li>
+      <li>Added clock-warped timing-boundary tests and adversarial cases: account substitution, spoofed claimants, share-arithmetic invariants</li>
       <li>Shipped a Next.js 15 / TypeScript dApp (wallet-adapter, TanStack Query, Tailwind) covering vault creation, live liveness countdown, and the beneficiary claim flow</li>
       <li>Produced a full architecture and security corpus: threat model, formal attack tree, PRD, and technical roadmap</li>
-      <li>Deployed and verified end-to-end on Solana devnet; mainnet launch gated behind external audit and multisig upgrade authority</li>
+      <li>Deployed and verified end-to-end on Solana devnet</li>
+      <li>Mainnet launch is gated behind external audit and multisig upgrade authority</li>
     </ul>
 
     <h4>Software Engineer | <a href="https://www.worksyncs.com/" target="_blank" rel="noopener noreferrer">Adebayo Adeleke LLC</a> – Arlington, Texas</h4>
